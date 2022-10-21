@@ -16,6 +16,7 @@ public interface BaseDirectory {
 	 * @param path - Path to contactDirectory.csv
 	 * @author bermed28
 	 */
+	
 	public void createDirectory(String path);
 
 	/**
@@ -23,7 +24,7 @@ public interface BaseDirectory {
 	 * passed as parameter does not have marked as favorite, but his favorites do have marked 
 	 * as favorite.
 	 * 
-	 * Think of it like Facebook’s “People You May Know” feature, 
+	 * Think of it like Facebookâ€™s â€œPeople You May Knowâ€� feature, 
 	 * friends of friends who are not friends with you.
 	 * 
 	 * If contact does not have any friends, the method returns an empty list.

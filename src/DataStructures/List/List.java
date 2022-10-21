@@ -1,5 +1,8 @@
 package DataStructures.List;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * List ADT Interface
  * 
@@ -10,7 +13,7 @@ public interface List<E> extends Iterable<E> {
 	public void add(E obj);
 	public void add(int index, E obj);
 	public boolean remove(E obj);
-	public boolean remove(int index);
+	public boolean removePos(int index);
 	public int removeAll(E obj);
 	public E get(int index);
 	public E set(int index, E obj);
@@ -21,3 +24,6 @@ public interface List<E> extends Iterable<E> {
 	public boolean contains(E obj);
 	public void clear();
 }
+
+
+
