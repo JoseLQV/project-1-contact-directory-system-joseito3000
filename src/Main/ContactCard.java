@@ -1,14 +1,23 @@
 package Main;
 
-import DataStructures.List.ArrayList;
+import java.io.BufferedReader;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+
+import DataStructures.List.ArrayList;
+import DataStructures.List.DoublyLinkedList;
+import DataStructures.List.List;
+import java.util.Date;
 /**
  * Contact Card Class to hold all the information 
  * regarding one contact inside the directory
  * 
  * @author bermed28 & Jose Luis Quinones Velez(joseito3000)
  */
-public class ContactCard{
+public class ContactCard  {
 
 	//-----------Private fileds-------------
 	private int id;
@@ -16,39 +25,29 @@ public class ContactCard{
 	private String jobTitle;
 	private String phoneNumber;
 	private String email;
+	private List<Integer> friends;
+	private Date birthday;
 	
-	//Birthday and Friend id different class
 	
-	
-	
-	//------------Constructor--------------------
-//	ContactCard(String[] columnValue){
-//		
-//	}
-	
-	//excel to individual info
-//	ContactCard(String[] columnValue){
-//		id = Integer.parseInt(columnValue[0]);
-//		name = columnValue[1];
-//		jobTitle = columnValue[2];
-//		phoneNumber = Integer.parseInt(columnValue[3]);
-//		email = columnValue[4];
-//	}
-	
+	//------------Constructors--------------------	
 	ContactCard(){
-		this.id = (Integer) null;
+		this.id = -1;
 		this.name = null;
 		this.jobTitle = null;
 		this.phoneNumber= null;
 		this.email = null;
+		this.friends = null;
+		this.birthday = null;
 	}
 	
-	ContactCard(int id, String name, String jobTitle, String phoneNumber, String email){
+	ContactCard(int id, String name, String jobTitle, String phoneNumber, String email, List<Integer> friends, Date bDay){
 		this.id = id;
 		this.name = name;
 		this.jobTitle = jobTitle;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
+		this.friends = friends;
+		this.birthday = bDay;
 	}
 	
 	
@@ -58,12 +57,20 @@ public class ContactCard{
 	public String getJobTitle() {return jobTitle;}
 	public String getPhone() {return phoneNumber;}
 	public String getEmail() {return email;}
+	public Date getBirthday() {return birthday;}
+	public List<Integer> getFriends() {return friends;}
+	
 	
 	public void setID(int id) {this.id = id;}
 	public void setName(String name) {this.name = name;}
 	public void setJobTitle(String jobTitle) {this.jobTitle = jobTitle;}
 	public void setPhone(String phoneNumber) {this.phoneNumber = phoneNumber;}
 	public void setEmail(String email) {this.email = email;}
+	public void setFriends(List<Integer> friends) {this.friends = friends;}
+	
+	
+	
 
-
+	
+	
 }
