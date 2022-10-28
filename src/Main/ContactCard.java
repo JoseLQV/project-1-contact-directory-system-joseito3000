@@ -17,6 +17,15 @@ import java.util.Date;
  * 
  * @author bermed28 & Jose Luis Quinones Velez(joseito3000)
  */
+
+
+
+/**
+ * The ContactCard class
+ * 
+ * Has the Contact valuable Information stored
+ * 
+ * */
 public class ContactCard  {
 
 	//-----------Private fileds-------------

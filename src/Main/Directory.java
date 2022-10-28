@@ -23,8 +23,10 @@ public class Directory implements BaseDirectory {
 	
 	
 	
-	/*
-	 * take in a path for it to be extracted
+	/**
+	 * The createDirectory method
+	 * 
+	 * Takes in a path for it to be extracted into the ContactCard and Store all Contacts in a List
 	 */
 	public void createDirectory(String path) {
 		// TODO Auto-generated method stub
@@ -79,7 +81,9 @@ public class Directory implements BaseDirectory {
 						this.allContacts = allContact;
 	}
 	
-	/*
+	/**
+	 * The recommenedFriends method
+	 * 
 	 * Takes a contact card and finds friends of friends that contact DONT have in common
 	 */
 	@Override
@@ -102,7 +106,9 @@ public class Directory implements BaseDirectory {
 		return recommendedList;
 	}
 
-	/*
+	/**
+	 * The commonFriends method
+	 * 
 	 * Takes a contact card and finds friends of friends that contact HAVE in common
 	 */
 	@Override
@@ -114,7 +120,7 @@ public class Directory implements BaseDirectory {
 			return null;
 		}
 		
-		for(int id: c1.getFriends()) {
+		for(int id: c1.getFriends()) {//checking common friends and adding them in commonList
 			if(c2.getFriends().contains(id)) {
 				commonList.add(findContact(id));
 			}
@@ -123,8 +129,11 @@ public class Directory implements BaseDirectory {
 		return commonList;
 	}
 
-	/*
-	 * Takes in Contact and checks all contacts for same birthday
+	/**
+	 * The shareBirthdays method
+	 * 
+	 * Takes in Contact and checks all contacts for same birthday 
+	 * and return List of those contacts
 	 */
 	@SuppressWarnings("deprecation")
 	@Override
@@ -141,16 +150,20 @@ public class Directory implements BaseDirectory {
 	}
 	
 	
-	/*
-	 * Arraylist that contains all contactCards
+	/**
+	 * The getContacts method
+	 * 
+	 * returns Arraylist that contains all contactCards that is extracted from createDirectory
 	 */
 	public List<ContactCard> getContacts() {
 		// TODO Auto-generated method stub
 		return this.allContacts;
 	}
 	
-	/*
-	 * Convert from ID to ContactCard
+	/** 
+	 * The findContact method
+	 * 
+	 * Converts from ID to ContactCard
 	 */
 	public ContactCard findContact(int id) {
 		for(int i = 0; i<getContacts().size(); i++) {
