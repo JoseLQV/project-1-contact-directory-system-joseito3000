@@ -91,13 +91,13 @@ public class Directory implements BaseDirectory {
 		// TODO Auto-generated method stub
 		DoublyLinkedList<ContactCard> recommendedList = new DoublyLinkedList<ContactCard>();
 		
-		for(int i=0; i<contact.getFriends().size();i++) {
+		for(int i=0; i<contact.getFriendsID().size();i++) {
 			
-			ContactCard hisFriend = findContact(contact.getFriends().get(i));// going through all contact friends ids
+			ContactCard hisFriend = findContact(contact.getFriendsID().get(i));// going through all contact friends ids
 			
-			if(!hisFriend.getFriends().isEmpty()) {
-				for(int id: hisFriend.getFriends()) {// friends of friend
-					if(id != contact.getID() && !contact.getFriends().contains(id) && !recommendedList.contains(findContact(id))) {
+			if(!hisFriend.getFriendsID().isEmpty()) {
+				for(int id: hisFriend.getFriendsID()) {// friends of friend
+					if(id != contact.getID() && !contact.getFriendsID().contains(id) && !recommendedList.contains(findContact(id))) {
 						recommendedList.add(findContact(id));
 					}
 				}
@@ -116,12 +116,12 @@ public class Directory implements BaseDirectory {
 		// TODO Auto-generated method stub
 		DoublyLinkedList<ContactCard> commonList = new DoublyLinkedList<ContactCard>();
 		
-		if(c1.getFriends().isEmpty() || c2.getFriends().isEmpty()) { //if empty no need to check
+		if(c1.getFriendsID().isEmpty() || c2.getFriendsID().isEmpty()) { //if empty no need to check
 			return null;
 		}
 		
-		for(int id: c1.getFriends()) {//checking common friends and adding them in commonList
-			if(c2.getFriends().contains(id)) {
+		for(int id: c1.getFriendsID()) {//checking common friends and adding them in commonList
+			if(c2.getFriendsID().contains(id)) {
 				commonList.add(findContact(id));
 			}
 		}

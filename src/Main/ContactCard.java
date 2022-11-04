@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat;
 import DataStructures.List.ArrayList;
 import DataStructures.List.DoublyLinkedList;
 import DataStructures.List.List;
+import DataStructures.List.SinglyLinkedList;
+
 import java.util.Date;
 /**
  * Contact Card Class to hold all the information 
@@ -26,7 +28,7 @@ import java.util.Date;
  * Has the Contact valuable Information stored
  * 
  * */
-public class ContactCard  {
+public class ContactCard extends Directory  {
 
 	//-----------Private fileds-------------
 	private int id;
@@ -36,6 +38,7 @@ public class ContactCard  {
 	private String email;
 	private List<Integer> friends;
 	private Date birthday;
+	private List<ContactCard> f;
 	
 	
 	//------------Constructors--------------------	
@@ -67,8 +70,17 @@ public class ContactCard  {
 	public String getPhone() {return phoneNumber;}
 	public String getEmail() {return email;}
 	public Date getBirthday() {return birthday;}
-	public List<Integer> getFriends() {return friends;}
+	public List<Integer> getFriendsID() {return friends;}
 	
+	//Goes from ID to ContactCard of Friends
+	public List<ContactCard> getFriends(){
+		SinglyLinkedList<ContactCard> friendsList = new SinglyLinkedList<ContactCard>();
+		for(int i=0; i< getFriendsID().size(); i++) {
+			ContactCard friendCC = findContact(getFriendsID().get(i));	//findContact(ID) return ContactCard of ID   (location -> directory class) 
+			friendsList.add(friendCC);
+		}
+		return friendsList;
+	}
 	
 	public void setID(int id) {this.id = id;}
 	public void setName(String name) {this.name = name;}
