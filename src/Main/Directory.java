@@ -32,7 +32,8 @@ public class Directory implements BaseDirectory {
 		// TODO Auto-generated method stub
 				String line = "";
 				// Read each line from Excel to eclipse
-				ArrayList<ContactCard> allContact = new ArrayList<ContactCard>(20);
+				ArrayList<ContactCard> allContact = new ArrayList<ContactCard>(100);
+				
 						try {
 							BufferedReader br = new BufferedReader(new FileReader(path));
 							
@@ -70,6 +71,7 @@ public class Directory implements BaseDirectory {
 								//---------Store all contacts in a ArrayList------------
 								allContact.add(new ContactCard(id,name,jobTitle,phoneNumber,email, friends, newBday));
 								
+								
 							}
 						}catch (FileNotFoundException e){
 							e.printStackTrace();
@@ -77,6 +79,7 @@ public class Directory implements BaseDirectory {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						
 						
 						this.allContacts = allContact;
 	}
