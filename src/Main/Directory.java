@@ -18,7 +18,7 @@ import DataStructures.List.List;
 import DataStructures.List.SinglyLinkedList;
 
 public class Directory implements BaseDirectory {
-	
+	 
 	private List<ContactCard> allContacts;
 	
 	

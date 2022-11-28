@@ -29,7 +29,7 @@ import java.util.Date;
  * 
  * */
 public class ContactCard extends Directory  {
-
+ 
 	//-----------Private fileds-------------
 	private int id;
 	private String name;
